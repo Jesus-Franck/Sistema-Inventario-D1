@@ -42,4 +42,3 @@ src/
     └── resources/
         └── colecciones/
             └── Dashboard.fxml          # Diseño de Scene Builder
-----
