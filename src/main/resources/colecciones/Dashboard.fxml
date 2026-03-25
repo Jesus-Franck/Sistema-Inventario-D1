@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="735.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="colecciones.controller.DashboardController">
+   <children>
+      <HBox layoutX="18.0" layoutY="89.0" prefHeight="36.0" prefWidth="700.0">
+         <children>
+            <Label fx:id="lblNombreProducto" focusTraversable="false" prefHeight="36.0" prefWidth="175.0" text="NOMBRE DEL PRODUCTO :">
+               <font>
+                  <Font name="SansSerif Bold" size="12.0" />
+               </font>
+            </Label>
+            <Pane prefHeight="36.0" prefWidth="19.0" />
+            <TextField fx:id="txtNombreProducto" alignment="CENTER" focusTraversable="false" prefHeight="33.0" prefWidth="115.0" />
+            <Pane prefHeight="36.0" prefWidth="50.0" />
+            <Label fx:id="lblTipoProducto" focusTraversable="false" prefHeight="36.0" prefWidth="131.0" text="TIPO DE PRODUCTO :">
+               <font>
+                  <Font name="SansSerif Bold" size="12.0" />
+               </font>
+            </Label>
+            <Pane prefHeight="36.0" prefWidth="27.0" />
+            <ComboBox fx:id="cmbTipoProducto" focusTraversable="false" onAction="#tipoProductos" prefHeight="34.0" prefWidth="164.0" promptText="Seleccione una opción" />
+         </children>
+      </HBox>
+      <HBox layoutX="18.0" layoutY="144.0" prefHeight="34.0" prefWidth="700.0">
+         <children>
+            <Label fx:id="lblPrecio" focusTraversable="false" prefHeight="36.0" prefWidth="170.0" text="PRECIO DEL PRODUCTO :">
+               <font>
+                  <Font name="SansSerif Bold" size="12.0" />
+               </font>
+            </Label>
+            <Pane prefHeight="36.0" prefWidth="30.0" />
+            <Spinner fx:id="spnPrecio" focusTraversable="false" onDragDetected="#precio" prefHeight="36.0" prefWidth="125.0" />
+            <Pane prefHeight="36.0" prefWidth="36.0" />
+            <Label fx:id="lblCantidad" focusTraversable="false" prefHeight="36.0" prefWidth="180.0" text="CANTIDAD DEL PRODUCTO :">
+               <font>
+                  <Font name="SansSerif Bold" size="12.0" />
+               </font>
+            </Label>
+            <Pane prefHeight="36.0" prefWidth="14.0" />
+            <Spinner fx:id="spnCantidad" focusTraversable="false" onDragDetected="#cantidad" prefHeight="36.0" prefWidth="125.0" />
+         </children>
+      </HBox>
+      <TextArea fx:id="txtDescripcion" focusTraversable="false" layoutX="219.0" layoutY="190.0" prefHeight="95.0" prefWidth="480.0" />
+      <Label fx:id="lblDescripcion" focusTraversable="false" layoutX="14.0" layoutY="190.0" prefHeight="36.0" prefWidth="205.0" text="DESCRIPCION DEL  PRODUCTO :">
+         <font>
+            <Font name="SansSerif Bold" size="12.0" />
+         </font>
+      </Label>
+      <HBox layoutX="18.0" layoutY="296.0" prefHeight="36.0" prefWidth="700.0">
+         <children>
+            <Pane prefHeight="36.0" prefWidth="22.0" />
+            <Button fx:id="btnAgregarProducto" focusTraversable="false" mnemonicParsing="false" onAction="#agregarProducto" prefHeight="36.0" prefWidth="147.0" text="AGREGAR PRODUCTO" />
+            <Pane prefHeight="36.0" prefWidth="22.0" />
+            <Button fx:id="btnEditarProducto" focusTraversable="false" mnemonicParsing="false" onAction="#editarProducto" prefHeight="36.0" prefWidth="147.0" text="EDITAR PRODUCTO" />
+            <Pane prefHeight="36.0" prefWidth="22.0" />
+            <Button fx:id="btnEliminarProducto" focusTraversable="false" mnemonicParsing="false" onAction="#eliminarProducto" prefHeight="36.0" prefWidth="147.0" text="ELIMINAR PRODUCTO" />
+            <Pane prefHeight="36.0" prefWidth="22.0" />
+            <Button fx:id="btnEliminarProductos" focusTraversable="false" mnemonicParsing="false" onAction="#eliminarProductos" prefHeight="36.0" prefWidth="152.0" text="ELIMINAR PRODUCTOS" />
+         </children>
+      </HBox>
+      <TableView fx:id="tblProductos"
+           layoutX="38.0" layoutY="349.0"
+           prefHeight="200.0" prefWidth="661.0">
+        <columns>
+          <TableColumn fx:id="tbNOMBRE" prefWidth="87.99996566772461" text="NOMBRE" />
+          <TableColumn fx:id="tbcTIPO" prefWidth="140.00001525878906" text="TIPO DE PRODUCTO" />
+            <TableColumn fx:id="tbcPRECIO" prefWidth="127.20001220703125" text="PRECIO" />
+            <TableColumn fx:id="tbcCANTIDAD" prefWidth="61.60003662109375" text="CANTIDAD" />
+            <TableColumn fx:id="tbcDESCRIPCION" prefWidth="242.39996337890625" text="DESCRIPCION" />
+        </columns>
+      </TableView>
+      <HBox layoutX="247.0" layoutY="21.0" prefHeight="44.0" prefWidth="242.0">
+         <children>
+            <ImageView fx:id="imgLogo" fitHeight="51.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images/D1%20Logo.png" />
+               </image>
+            </ImageView>
+            <Pane prefHeight="51.0" prefWidth="36.0" />
+            <Label fx:id="lblText" contentDisplay="CENTER" focusTraversable="false" prefHeight="58.0" prefWidth="159.0" text="PRODUCTOS">
+               <font>
+                  <Font name="SansSerif Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</Pane>
